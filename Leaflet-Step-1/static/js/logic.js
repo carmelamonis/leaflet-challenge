@@ -74,3 +74,41 @@ d3.json(queryURL).then(function(earthquakeData) {
  
 });
 
+/*function getColor(depth) {
+    return (depth >= -10 && depth < 10) ? '#28B463' :
+           (depth >= 10 && depth < 30)  ? '#DAFF33' :
+           (depth >= 30 && depth < 50)  ? '#FAD7A0' :
+           (depth >= 50 && depth < 70)  ? '#F5B041' :
+           (depth >= 70 && depth < 90)  ? '#DC7633' :
+           depth > 90   ? '#C0392B':
+                            '#FFEDA0';
+}*/
+
+function getColor(depth) {
+    return depth > 90 ? '#C0392B' :
+           depth >= 70  ? '#DC7633' :
+           depth >= 50  ? '#F5B041' :
+           depth >= 30  ? '#FAD7A0' :
+           depth >= 10  ? '#DAFF33' :
+           depth >= -10 ? '#28B463' :
+                      '#FFEDA0';
+}
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (myMap) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [-10, 10, 30, 50, 70, 90],
+        labels = [];
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+    }
+
+    return div;
+};
+
+legend.addTo(myMap);
