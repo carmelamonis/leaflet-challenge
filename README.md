@@ -12,3 +12,5 @@ I pulled in the data using the USGS GeoJSON data set of All Earthquakes from the
 I used Leaflet to create the plots of all of the earthquakes from the data set based on their longitude and latitude.
 
 The data markers reflected the magnitude of the earthquake by their size, and the depth of the earthquake by its color. Earthquake information is included in the popup when the marker is clicked.
+
+![Map](Images/map.png)
