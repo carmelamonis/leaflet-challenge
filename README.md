@@ -6,6 +6,8 @@ The United States Geological Survey, USGS for short, provides scientific data ab
 
 The [USGS GeoJSON Feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) provides several data sets that return the earthquake information in JSON format. I chose [All Earthquakes from the Past 7 Days](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson) for this challenge.
 
+![Data](Images/data.png)
+
 ## Scope
 I pulled in the data using the USGS GeoJSON data set of All Earthquakes from the Past 7 Days to use for my visuaization.
 
